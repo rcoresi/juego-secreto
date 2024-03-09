@@ -51,22 +51,23 @@ function generarNumeroSecreto() {
     console.log(listaNumerosSorteados);
     if(listaNumerosSorteados.length == numeroMaximo){
         asignarTextoElemento('p','Ya se sortearon todos los números posibles');
-        if(listaNumerosSorteados.includes(numeroGenerado)){
+    } else{
+       if(listaNumerosSorteados.includes(numeroGenerado)){
             return generarNumeroSecreto();
         }else{
             listaNumerosSorteados.push(numeroGenerado);
             return numeroGenerado;
         }
-        
     }
 }
+
 function condicionesIniciales() {
 
     asignarTextoElemento('h1','Juego del número secreto');
     asignarTextoElemento('p',`Indica un número del 1 al ${numeroMaximo}`);
     numeroSecreto = generarNumeroSecreto();
     intentos = 1;
-
+    
 }
 
 function reiniciarJuego() {
